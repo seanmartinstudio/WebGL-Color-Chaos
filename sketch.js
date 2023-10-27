@@ -1,9 +1,11 @@
+let timer
 let unitsX = 45
 let unitsY = 35
 let numBox = 6
 
 function setup() {
   createCanvas(800, 800, WEBGL)
+  timer = millis();
 }
 
 function keyPressed() {
@@ -28,5 +30,13 @@ function draw() {
     rotateY(radians(unitsY))
     box(175, 175, 175)
   }
+
+  if (millis() - timer >= 5000) {
+    // Restart the sketch by resetting the timer
+    timer = millis();
+    noLoop()
+    // saveCanvas('pixDen4Test', 'jpg');
+  }
+
 
 }
