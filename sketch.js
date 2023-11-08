@@ -4,19 +4,19 @@ let unitsY = 35
 let numBox = 6
 
 function setup() {
-  createCanvas(800, 800, WEBGL)
+  createCanvas(2750, 2750, WEBGL)
   timer = millis();
 }
 
-function keyPressed() {
-  // download gif
-  if (key === 's') {
-    saveGif('myGIF', 10)
-  }
-}
+// function keyPressed() {
+//   // download gif
+//   if (key === 's') {
+//     saveGif('myGIF', 10)
+//   }
+// }
 
 function draw() {
-  background(0)
+  background(255)
   frameRate(10)
 
   for (let i = 0; i < numBox; i++) {
@@ -28,15 +28,15 @@ function draw() {
     stroke(random(0, 255), random(0, 255), random(0, 255))
     rotateX(radians(unitsX))
     rotateY(radians(unitsY))
-    box(175, 175, 175)
+    // box(175, 175, 175)
+    box(1000, 1000, 1000)
   }
 
   if (millis() - timer >= 5000) {
     // Restart the sketch by resetting the timer
     timer = millis();
     noLoop()
-    // saveCanvas('pixDen4Test', 'jpg');
+    saveCanvas('photo', 'jpg');
   }
-
-
 }
+
